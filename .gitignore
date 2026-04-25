@@ -8,22 +8,33 @@ yarn.lock
 
 # Build outputs
 dist/
+release/
 build/
-*.local
-*.tsbuildinfo
+out/
+*.exe
+*.dmg
+*.deb
+*.rpm
+*.AppImage
+*.blockmap
+*.exe.blockmap
 
-# Environment variables
-.env
-.env.local
-.env.*.local
+# Electron打包文件
+release-builds/
+dist-electron/
 
 # Database files
 *.db
 *.sqlite
 *.sqlite3
 *.db-journal
-*.db-wal
-*.db-shm
+mixer.db
+server/mixer.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
 
 # IDE / Editor files
 .vscode/
@@ -38,7 +49,7 @@ desktop.ini
 # Logs
 logs/
 *.log
-server/logs/
+npm-debug.log*
 
 # OS files
 .DS_Store
@@ -57,24 +68,17 @@ coverage/
 *.tmp
 *.temp
 .cache/
-
-# Server specific
-server/data/
-server/*.db
-
-# Client specific
-client/.env
+.vite/
 
 # Backup files
 *.bak
 *.backup
+*.old
 
 # Debug files
-.vite/
 *.pid
-
-# React / Vite
-.eslintcache
+*.seed
+*.pid.lock
 
 # TypeScript
 *.tsbuildinfo
@@ -84,3 +88,20 @@ client/.env
 *.key
 *.crt
 *.p12
+*.pfx
+
+# Windows installer files
+*.msi
+*.msp
+*.exe
+
+# Electron builder cache
+~*.*
+!*.md
+!*.js
+!*.jsx
+!*.html
+!*.css
+
+# User specific files
+.vite.config.js.timestamp-*
