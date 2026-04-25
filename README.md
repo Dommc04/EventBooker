@@ -10,7 +10,6 @@ A desktop event booking application for managing events and RSVPs.
 
 ### Windows
 - [Installer (Recommended)](https://github.com/Dommc04/EventBooker/releases/download/v1.0.0/Mixer.EventBooker.Setup.1.0.0.exe)
-- [Portable Version](https://github.com/Dommc04/EventBooker/releases/download/v1.0.0/Mixer-Portable.zip)
 
 ## ✨ Features
 - Create and manage events
