@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api } from '../lib/api'
-import { Card, Badge, CapacityBar, Avatar, Spinner, Button } from '../components/ui'
+import { api } from './api'
+import { Card, Badge, CapacityBar, Avatar, Spinner, Button } from './ui'
 
 export default function Dashboard() {
   const [stats, setStats] = useState(null)

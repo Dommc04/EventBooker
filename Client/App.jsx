@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout'
-import Dashboard from './pages/Dashboard'
-import Events from './pages/Events'
-import EventDetail from './pages/EventDetail'
-import EventForm from './pages/EventForm'
-import Guests from './pages/Guests'
+import Layout from './Layout'
+import Dashboard from './Dashboard'
+import Events from './Events'
+import EventDetail from './EventDetail'
+import EventForm from './EventForm'
+import Guests from './Guests'
 
 export default function App() {
   return (

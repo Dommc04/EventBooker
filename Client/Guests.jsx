@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api } from '../lib/api'
-import { Avatar, Card, Spinner, EmptyState } from '../components/ui'
+import { api } from './api'
+import { Avatar, Card, Spinner, EmptyState } from './ui'
 
 export default function Guests() {
   const [rsvps, setRsvps] = useState([])

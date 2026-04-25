@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { api } from '../lib/api'
-import { Card, Input, Textarea, Select, Button, Spinner, useToast } from '../components/ui'
+import { api } from './api'
+import { Card, Input, Textarea, Select, Button, Spinner, useToast } from './ui'
 
 const EMOJIS = ['🎉', '🎂', '🌊', '🌸', '🍸', '🎵', '🏖️', '🍕', '🎈', '🥳', '🌙', '🎊']
 

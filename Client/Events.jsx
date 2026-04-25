@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api } from '../lib/api'
-import { Card, Badge, CapacityBar, Button, Spinner, EmptyState } from '../components/ui'
+import { api } from './api'
+import { Card, Badge, CapacityBar, Button, Spinner, EmptyState } from './ui'
 
 const STATUSES = ['all', 'open', 'full', 'draft', 'cancelled']
 

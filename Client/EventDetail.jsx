@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { api } from '../lib/api'
-import { Card, Badge, CapacityBar, Avatar, Button, Input, Textarea, Modal, Spinner, EmptyState, useToast } from '../components/ui'
+import { api } from './api'
+import { Card, Badge, CapacityBar, Avatar, Button, Input, Textarea, Modal, Spinner, EmptyState, useToast } from './ui'
 
 export default function EventDetail() {
   const { id } = useParams()

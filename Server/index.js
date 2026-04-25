@@ -1,9 +1,9 @@
 import express from 'express'
 import cors from 'cors'
-import eventsRouter from './routes/events.js'
-import rsvpsRouter from './routes/rsvps.js'
-import statsRouter from './routes/stats.js'
-import { getDb } from './db/database.js'
+import eventsRouter from './events.js'
+import rsvpsRouter from './rsvps.js'
+import statsRouter from './stats.js'
+import { getDb } from './database.js'
 
 const app = express()
 const PORT = process.env.PORT || 3001
