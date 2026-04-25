@@ -1,2 +1,2 @@
 # EventBooker
-Event booking system Prototype 
+Event booking system Prototype - Named Mixer!
