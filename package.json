@@ -1,14 +1,18 @@
 {
-  "name": "mixer",
+  "name": "mixer-eventbooker",
   "version": "1.0.0",
+  "description": "Event Booking Desktop Application",
+  "author": "Your Name",
   "private": true,
   "type": "module",
+  "main": "electron-main.js",
   "scripts": {
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm run dev",
-    "client": "vite",
+    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "cd Server && node index.js",
+    "electron": "npm run build && electron .",
+    "dist:win": "npm run build && electron-builder --win"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -17,7 +21,24 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
-    "concurrently": "^8.2.2",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
     "vite": "^5.1.6"
+  },
+  "build": {
+    "appId": "com.mixer.eventbooker",
+    "productName": "Mixer EventBooker",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "server/**/*",
+      "electron-main.js"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    }
   }
 }

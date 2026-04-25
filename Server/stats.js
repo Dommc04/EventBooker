@@ -3,16 +3,27 @@ import { getDb } from './database.js'
 
 const router = Router()
 
-// GET /api/stats — dashboard summary stats
-router.get('/', (req, res) => {
-  const db = getDb()
+router.get('/', async (req, res) => {
+  try {
+    const db = getDb()
+    
+    const totalRsvpsResult = db.get('SELECT COALESCE(SUM(guest_count), 0) as total FROM rsvps')
+    const totalRsvps = totalRsvpsResult?.total || 0
+    
+    const activeEventsResult = db.get("SELECT COUNT(*) as count FROM events WHERE status IN ('open', 'full')")
+    const activeEvents = activeEventsResult?.count || 0
+    
+    const totalEventsResult = db.get('SELECT COUNT(*) as count FROM events')
+    const totalEvents = totalEventsResult?.count || 0
+    
+    const draftEventsResult = db.get("SELECT COUNT(*) as count FROM events WHERE status = 'draft'")
+    const draftEvents = draftEventsResult?.count || 0
 
-  const totalRsvps = db.prepare('SELECT COALESCE(SUM(guest_count), 0) as total FROM rsvps').get().total
-  const activeEvents = db.prepare("SELECT COUNT(*) as count FROM events WHERE status IN ('open', 'full')").get().count
-  const totalEvents = db.prepare('SELECT COUNT(*) as count FROM events').get().count
-  const draftEvents = db.prepare("SELECT COUNT(*) as count FROM events WHERE status = 'draft'").get().count
-
-  res.json({ totalRsvps, activeEvents, totalEvents, draftEvents })
+    res.json({ totalRsvps, activeEvents, totalEvents, draftEvents })
+  } catch (error) {
+    console.error('Error getting stats:', error)
+    res.status(500).json({ error: error.message })
+  }
 })
 
 export default router

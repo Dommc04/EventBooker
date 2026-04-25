@@ -1,0 +1,5 @@
+Mixer EventBooker - Event Booking System
+
+Copyright (c) 2026
+
+This software is provided "as is", without warranty of any kind.
